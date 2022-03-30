@@ -95,12 +95,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controle\Conexao.cs" />
+    <Compile Include="Controle\EstadoDB.cs" />
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Cidade.cs" />
+    <Compile Include="Modelo\Estado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPrincipal.resx">
@@ -132,9 +135,7 @@
   <ItemGroup>
     <Content Include="Icone.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modelo\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

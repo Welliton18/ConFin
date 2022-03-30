@@ -24,13 +24,36 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
+            this.Button_Listar = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
+            // 
+            // Button_Listar
+            // 
+            this.Button_Listar.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Button_Listar.Location = new System.Drawing.Point(306, 65);
+            this.Button_Listar.Name = "Button_Listar";
+            this.Button_Listar.Size = new System.Drawing.Size(75, 23);
+            this.Button_Listar.TabIndex = 0;
+            this.Button_Listar.Text = "Listar";
+            this.Button_Listar.UseVisualStyleBackColor = true;
+            this.Button_Listar.Click += new System.EventHandler(this.button_Listar_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(59, 119);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(565, 173);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 450);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Button_Listar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -43,6 +66,9 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button Button_Listar;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
