@@ -14,6 +14,7 @@ namespace Confin.Controle {
             try {
                 conexao = new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=postgres; Database=financeiro;");
                 conexao.Open();
+                Console.WriteLine("Conexão OK");
             } catch(Exception e) {
                 Console.WriteLine("Erro ao concectar o banco:" + e.Message);
             }
@@ -25,6 +26,7 @@ namespace Confin.Controle {
             if(conexao != null) {
                 try {
                     conexao.Close();
+                    Console.WriteLine("Fechamento OK");
                 } catch(Exception e) {
                     Console.WriteLine("Erro ao fechar conexão banco:" + e.Message);
                 }
