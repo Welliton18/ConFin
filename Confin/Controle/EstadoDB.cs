@@ -23,11 +23,35 @@ namespace Confin.Controle {
 
                     lista.Add(new Estado(sigla, nome));
                 }
+
+                dr.Close();
             } catch(Exception e) {
                 Console.WriteLine("Erro de SQL: " + e.Message);
             }
 
             return lista;
+        }
+
+        public static bool SetInsereEstado(Estado estado, NpgsqlConnection conexao) {
+            bool retorno = false;
+
+            try {
+                string sql = "INSERT INTO ESTADO(EST_SIGLA, NOME) VALUES(@sigla, @nome)";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
+
+                cmd.Parameters.Add("@sigla", NpgsqlTypes.NpgsqlDbType.Varchar).Value = estado.est_sigla;
+                cmd.Parameters.Add("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = estado.nome;
+
+                int valor = cmd.ExecuteNonQuery();
+
+                retorno = valor == 1;
+
+            } catch(Exception e) {
+                Console.WriteLine("Erro de SQL: " + e.Message);
+            }
+
+            return retorno;
         }
 
     }

@@ -94,6 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controle\CidadeDB.cs" />
     <Compile Include="Controle\Conexao.cs" />
     <Compile Include="Controle\EstadoDB.cs" />
     <Compile Include="frmPrincipal.cs">
@@ -103,7 +104,9 @@
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Cidade.cs" />
+    <Compile Include="Modelo\Conta.cs" />
     <Compile Include="Modelo\Estado.cs" />
+    <Compile Include="Modelo\Pessoa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPrincipal.resx">

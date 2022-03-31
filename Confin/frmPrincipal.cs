@@ -57,5 +57,16 @@ namespace Confin {
             richTextBox1.AppendText("- Nome:" + estado.nome);
             richTextBox1.AppendText("\n");
         }
+
+        private void button_Incluir_Click(object sender, EventArgs e) {
+            Estado estado = new Estado("RJ", "Rio de Janeiro");
+            bool retorno  = EstadoDB.SetInsereEstado(estado, conexao);
+            if(retorno) {
+                MessageBox.Show("Estado Inserido!");
+                button_Listar_Click(sender, e);
+            } else {
+                MessageBox.Show("Erro ao Inserir Estado!");
+            }
+        }
     }
 }

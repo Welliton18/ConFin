@@ -11,7 +11,7 @@ namespace Confin.Modelo {
 
         public string nome { get; set; }
 
-        public string est_sigla { get; set; }
+        public Estado Estado { get; set; }
 
     }
 }
