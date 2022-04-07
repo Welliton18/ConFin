@@ -27,6 +27,8 @@
             this.Button_Listar = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button_Incluir = new System.Windows.Forms.Button();
+            this.Alterar = new System.Windows.Forms.Button();
+            this.Excluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Button_Listar
@@ -50,7 +52,7 @@
             // 
             // button_Incluir
             // 
-            this.button_Incluir.Location = new System.Drawing.Point(367, 74);
+            this.button_Incluir.Location = new System.Drawing.Point(272, 74);
             this.button_Incluir.Name = "button_Incluir";
             this.button_Incluir.Size = new System.Drawing.Size(75, 23);
             this.button_Incluir.TabIndex = 2;
@@ -58,11 +60,35 @@
             this.button_Incluir.UseVisualStyleBackColor = true;
             this.button_Incluir.Click += new System.EventHandler(this.button_Incluir_Click);
             // 
+            // Alterar
+            // 
+            this.Alterar.Location = new System.Drawing.Point(366, 73);
+            this.Alterar.Name = "Alterar";
+            this.Alterar.Size = new System.Drawing.Size(75, 23);
+            this.Alterar.TabIndex = 3;
+            this.Alterar.Text = "Alterar";
+            this.Alterar.UseMnemonic = false;
+            this.Alterar.UseVisualStyleBackColor = true;
+            this.Alterar.Click += new System.EventHandler(this.button_Click_Alterar);
+            // 
+            // Excluir
+            // 
+            this.Excluir.Location = new System.Drawing.Point(462, 74);
+            this.Excluir.Name = "Excluir";
+            this.Excluir.Size = new System.Drawing.Size(75, 23);
+            this.Excluir.TabIndex = 4;
+            this.Excluir.Text = "Excluir";
+            this.Excluir.UseMnemonic = false;
+            this.Excluir.UseVisualStyleBackColor = true;
+            this.Excluir.Click += new System.EventHandler(this.button_Click_Excluir);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 450);
+            this.Controls.Add(this.Excluir);
+            this.Controls.Add(this.Alterar);
             this.Controls.Add(this.button_Incluir);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.Button_Listar);
@@ -82,6 +108,8 @@
         private System.Windows.Forms.Button Button_Listar;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button_Incluir;
+        private System.Windows.Forms.Button Alterar;
+        private System.Windows.Forms.Button Excluir;
     }
 }
 

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace Confin.Modelo {
     public class Pessoa {
 
+        public Cidade Cidade { get; set; }
+
         public int pes_codigo { get; set; } 
 
         public string nome { get; set; } 
@@ -15,7 +17,6 @@ namespace Confin.Modelo {
 
         public string email { get; set; } 
 
-        public int cid_codigo { get; set; } 
-
+        public Pessoa() { }
     }
 }

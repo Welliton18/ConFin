@@ -13,5 +13,13 @@ namespace Confin.Modelo {
 
         public Estado Estado { get; set; }
 
+        public Cidade() { }
+
+        public Cidade(int codigo, string nome, string siglaEstado) {
+            this.cid_codigo = codigo;
+            this.nome = nome;
+            this.Estado = new Estado(siglaEstado);
+        }
+
     }
 }

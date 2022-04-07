@@ -54,5 +54,48 @@ namespace Confin.Controle {
             return retorno;
         }
 
+        public static bool SetAlteraEstado(Estado estado, NpgsqlConnection conexao) {
+            bool retorno = false;
+
+            try {
+                string sql = "UPDATE ESTADO SET NOME = @nome WHERE EST_SIGLA = @sigla";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
+
+                cmd.Parameters.Add("@sigla", NpgsqlTypes.NpgsqlDbType.Varchar).Value = estado.est_sigla;
+                cmd.Parameters.Add("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = estado.nome;
+
+                int valor = cmd.ExecuteNonQuery();
+
+                retorno = valor == 1;
+
+            } catch(Exception e) {
+                Console.WriteLine("Erro de SQL: " + e.Message);
+            }
+
+            return retorno;
+        }
+
+        public static bool SetExcluirEstado(string sigla, NpgsqlConnection conexao) {
+            bool retorno = false;
+
+            try {
+                string sql = "DELETE FROM ESTADO WHERE EST_SIGLA = @sigla";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conexao);
+
+                cmd.Parameters.Add("@sigla", NpgsqlTypes.NpgsqlDbType.Varchar).Value = sigla;
+
+                int valor = cmd.ExecuteNonQuery();
+
+                retorno = valor == 1;
+
+            } catch(Exception e) {
+                Console.WriteLine("Erro de SQL: " + e.Message);
+            }
+
+            return retorno;
+        }
+
     }
 }
